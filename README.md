@@ -1,4 +1,4 @@
-sierpinsky
+sierpinski
 ==========
 
-sierpinsky-like polygons
+sierpinski-like polygons
