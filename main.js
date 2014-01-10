@@ -46,9 +46,9 @@ window.onload = function () {
 	canvas.height = height;
 	canvas.width = width;
 
-	ctx = canvas.getContext("2d");
+	ctx = canvas.getContext('2d');
 
-	polygon(10);
+	polygon(prompt('polygon count'));
 
-	step(1000000);
+	step(prompt('steps'));
 }
