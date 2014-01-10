@@ -1,0 +1,4 @@
+sierpinsky
+==========
+
+sierpinsky-like polygons
