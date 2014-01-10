@@ -1,5 +1,7 @@
 var canvas, ctx;
 
+var steps;
+
 var width, height;
 
 var points = [];
@@ -20,19 +22,21 @@ function polygon (n) {
 	}
 }
 
-function step (n) {
+var x,y;
 
-	var x = points[0].x;
-	var y = points[0].y;
+function step (s,n) {
 
-	for (var i = 0; i < n; i++) {
+	x = x || points[0].x;
+	y = y || points[0].y;
+
+	for (var i = s; i < n; i++) {
 
 		var a = Math.floor(Math.random()*points.length);
 
 		ctx.fillRect(x,y,1,1);
 
-		x = (x+points[a].x*(points.length-2))/(points.length-1);
-		y = (y+points[a].y*(points.length-2))/(points.length-1);
+		x = (x+points[a].x)/2;
+		y = (y+points[a].y)/2;
 	
 	}
 }
@@ -50,5 +54,18 @@ window.onload = function () {
 
 	polygon(prompt('polygon count'));
 
-	step(prompt('steps'));
+	steps = 10000000;
+
+	magic();
+}
+
+var i = 0;
+
+function magic () {
+	step(i*10000,i*10000+10000);
+	if(i*10000<steps) {
+		setTimeout(function() {
+			magic();
+		},1);
+	}
 }
