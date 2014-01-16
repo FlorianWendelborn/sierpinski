@@ -16,8 +16,8 @@ function polygon (n) {
 
 	for (var i = 0; i < n; i++) {
 		points.push({
-			x: m.x + r * Math.cos(i * a),
-			y: m.y - r * Math.sin(i * a)
+			x: m.x + r * Math.cos(i * a+Math.PI/2),
+			y: m.y - r * Math.sin(i * a+Math.PI/2)
 		});
 	}
 }
