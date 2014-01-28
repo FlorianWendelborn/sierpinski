@@ -1,4 +1,4 @@
 sierpinski
 ==========
 
-sierpinski-like polygons
+Sierpinski-like fractals
